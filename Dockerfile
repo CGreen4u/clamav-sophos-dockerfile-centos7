@@ -18,5 +18,5 @@ RUN  yum -y install epel-release \
 
 RUN mkdir -p /product
 WORKDIR /product
-RUN mkdir -P /usr/src/app
+RUN mkdir -p /usr/src/app
 
