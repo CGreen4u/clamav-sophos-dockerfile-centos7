@@ -3,7 +3,7 @@ fs
 gnupg
 #import configuration-user
 subprocess.run
-shutil
+pytest-shutil
 tarfile
 datetime
 elasticsearch
