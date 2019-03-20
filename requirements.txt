@@ -1,6 +1,4 @@
 psycopg2
-sys
-os
 fs
 gnupg
 #import configuration-user
