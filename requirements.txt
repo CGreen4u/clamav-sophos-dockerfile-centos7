@@ -2,7 +2,7 @@ psycopg2
 sys
 os
 fs
-python-gnupg
+gnupg
 #import configuration-user
 subprocess.run
 shutil
@@ -12,3 +12,5 @@ elasticsearch
 elasticsearch_dsl.connections
 elasticsearch_dsl 
 kafka
+signal
+json
