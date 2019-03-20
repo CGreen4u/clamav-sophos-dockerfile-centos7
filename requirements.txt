@@ -6,7 +6,6 @@ subprocess.run
 pytest-shutil
 datetime
 elasticsearch
-elasticsearch_dsl.connections
 elasticsearch_dsl 
 kafka
 signal
