@@ -1,0 +1,14 @@
+psycopg2
+sys
+os
+fs
+python-gnupg
+#import configuration-user
+subprocess.run
+shutil
+tarfile
+datetime
+elasticsearch
+elasticsearch_dsl.connections
+elasticsearch_dsl 
+kafka
