@@ -4,7 +4,6 @@ gnupg
 #import configuration-user
 subprocess.run
 pytest-shutil
-tarfile
 datetime
 elasticsearch
 elasticsearch_dsl.connections
