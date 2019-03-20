@@ -21,6 +21,7 @@ WORKDIR /product
 RUN mkdir -p /usr/src/app
 
 FROM python:3
+RUN pip install -r requirements.txt
 WORKDIR product/usr/src/app
 
 COPY main.py .
