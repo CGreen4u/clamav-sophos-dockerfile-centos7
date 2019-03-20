@@ -16,8 +16,7 @@ RUN  yum -y install epel-release \
 && ./sophos-av/install.sh /opt/sophos --update-free --acceptlicence --autostart=False --enableOnBoot=False --automatic --ignore-existing-installation --update-source-type=s
 
 
-MKDIR -p /product
+RUN mkdir -p /product
 WORKDIR /product
-MKDIR -P ./usr/src/app
+RUN mkdir -P /usr/src/app
 
-mkdir -p /var/www/app
