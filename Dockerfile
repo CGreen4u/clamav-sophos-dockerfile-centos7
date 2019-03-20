@@ -8,7 +8,7 @@ RUN yum -y update
 WORKDIR  /root/
 RUN  yum -y install epel-release \
 && yum -y install clamav \
-&& yum -y freshclam
+&& yum -y freshclam \
 #install sophos
 && yum -y install wget \
 && wget https://github.com/maliceio/malice-av/raw/master/sophos/sav-linux-free-9.tgz \
