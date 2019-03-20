@@ -20,3 +20,9 @@ RUN mkdir -p /product
 WORKDIR /product
 RUN mkdir -p /usr/src/app
 
+FROM python:3
+WORKDIR product/usr/src/app
+
+COPY main.py .
+
+CMD ["python", "main.py"]
