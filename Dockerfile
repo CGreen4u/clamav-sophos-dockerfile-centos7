@@ -23,7 +23,6 @@ RUN mkdir -p /usr/src/app
 FROM python:3-onbuild
 COPY requirements.txt /usr/src/app/requirements.txt
 WORKDIR /usr/src/app
-COPY requirements.txt
 RUN pip install -r requirements.txt
 WORKDIR product/usr/src/app
 
