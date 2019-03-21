@@ -8,5 +8,4 @@ datetime
 elasticsearch
 elasticsearch_dsl 
 kafka
-signal
 json
