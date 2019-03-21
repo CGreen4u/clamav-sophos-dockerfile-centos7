@@ -3,7 +3,7 @@ fs
 gnupg
 #import configuration-user
 subprocess.run
-pytest-shutil
+#pytest-shutil
 datetime
 elasticsearch
 elasticsearch_dsl 
