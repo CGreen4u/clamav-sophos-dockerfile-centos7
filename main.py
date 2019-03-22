@@ -104,10 +104,10 @@ class Decryption:
     files_dir_clean = []
 
     #create seperate path for decryped files to be seperate from encryped files
-    if os.path.exists("decrypted/"):
+    if os.path.exists("/home/cgreen/Decryption/decrypted/"):
         print("Decrypted directory already exists")
     else:
-        home_fs.makedir(u"decrypted/")
+        os.mkdir(u"/home/cgreen/Decryption/decrypted/")
         print("Created decrypted directory")
         
     #add files to list (list the uuid for the folder to pick) name of file from kafka
