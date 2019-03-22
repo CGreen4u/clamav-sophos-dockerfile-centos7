@@ -28,3 +28,5 @@ WORKDIR /usr/src/app
 COPY main.py .
 
 CMD ["python", "main.py"]
+
+EXPOSE 5001
