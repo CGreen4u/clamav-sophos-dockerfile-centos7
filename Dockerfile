@@ -14,7 +14,8 @@ RUN  yum -y install epel-release \
 && wget https://github.com/maliceio/malice-av/raw/master/sophos/sav-linux-free-9.tgz \
 && tar xzvf sav-linux-free-9.tgz \
 && ./sophos-av/install.sh /opt/sophos --update-free --acceptlicence --autostart=False --enableOnBoot=False --automatic --ignore-existing-installation --update-source-type=s
-
+#install GNU Privacy Guard
+&& yum install gnupg
 
 RUN mkdir -p /product
 WORKDIR /product
