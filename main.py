@@ -131,7 +131,7 @@ class Decryption:
     print( 'ok: ', status.ok)
     print( 'status: ', status.status)
     print( 'stderr: ', status.stderr)
-    os.rename(files_dir_clean[files_dir.index(x)], "decrypted/" + files_dir_clean[files_dir.index(x)])
+#os.rename(files_dir_clean[files_dir.index(x)], "decrypted/" + files_dir_clean[files_dir.index(x)])
            
     print("Decryption Complete")
 Decryption()            
