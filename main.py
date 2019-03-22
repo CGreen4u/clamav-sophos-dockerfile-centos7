@@ -91,6 +91,14 @@ class postgres_UUID:
 postgres_UUID()
 
 class Decryption:
+    if os.path.exists('/home/cgreen/Decryption/Encrypted'):
+        print("Decrypted directory already exists")
+    else:
+        os.mkdir(u"'/home/cgreen/Decryption/Encrypted'")
+        print("Created decrypted directory")
+
+    os.chdir('/home/cgreen/Decryption/Encrypted')
+
         #be sure location of file and keys
     gpg = gnupg.GPG(gnupghome=(str(kafka_consumer1.filepath)))
     #gpg = gnupg.GPG(homedir=(str(kafka_consumer1.filepath)))
@@ -98,7 +106,7 @@ class Decryption:
                                     #secring= (str(secret_keyring)))
 
     #secret key needs to be included here
-    home_fs = open_fs(".")
+    #home_fs = open_fs(".")
     #create directory
     files_dir = []
     files_dir_clean = []
@@ -111,7 +119,7 @@ class Decryption:
         print("Created decrypted directory")
         
     #add files to list (list the uuid for the folder to pick) name of file from kafka
-    files = [f for f in os.listdir(".") if os.path.isfile(f)]
+    files = [f for f in os.listdir("/home/cgreen/Decryption/Encrypted") if os.path.isfile(f)]
     for f in files:
         files_dir.append(f)
 
@@ -131,9 +139,20 @@ class Decryption:
     print( 'ok: ', status.ok)
     print( 'status: ', status.status)
     print( 'stderr: ', status.stderr)
-#os.rename(files_dir_clean[files_dir.index(x)], "decrypted/" + files_dir_clean[files_dir.index(x)])
+    #os.rename(files_dir_clean[files_dir.index(x)], "decrypted/" + files_dir_clean[files_dir.index(x)])
            
     print("Decryption Complete")
+    
+    files = [f for f in os.listdir("/home/cgreen/Decryption/Encrypted") if os.path.isfile(f)]
+    new_dest = '/home/cgreen/Decryption/decrypted/'
+    for f in files:
+        if f.endswith('gpg'):
+             os.remove(f)
+    files = [f for f in os.listdir("/home/cgreen/Decryption/Encrypted") if os.path.isfile(f)]
+    for f in files:
+        shutil.move(f, new_dest)
+
+    
 Decryption()            
     
 #be sure you point the unzip/untar to the decrypted folder
