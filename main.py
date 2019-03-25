@@ -208,7 +208,7 @@ class malware_scanner:
             for file in files:       
                 changes.append(file)
         sophos_virus_dir.append(list(set(changes) - set(clamscan_virus_dir)))
-
+    malware_bash()
 malware_scanner()
         #the infected files are alread in quarantine we only need to move the original files 
 clean_files = os.listdir("//home//cgreen//Decryption//decrypted//")
