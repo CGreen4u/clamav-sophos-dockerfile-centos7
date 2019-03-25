@@ -265,7 +265,9 @@ class Kafka_Producer:
     fin_result = bytes(json_string, 'utf-8')
     
     #other producers below
-    producer = KafkaProducer(bootstrap_servers='localhost:9092')
+    #producer = KafkaProducer(bootstrap_servers='localhost:9092'
+    #plaintext used for docker
+    producer = KafkaProducer(bootstrap_servers='PLAINTEXT://localhost:9092')
     #producer2 = KafkaProducer(bootstrap_servers='localhost:9093')
     #producer3 = KafkaProducer(bootstrap_servers='localhost:9094')
     bracket = "{"
