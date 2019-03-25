@@ -171,11 +171,13 @@ unzip()
 
 files_b4_cleaning = [os.listdir("/home/cgreen/Decryption/decrypted/")]
 
+clamscan_virus_dir = []
+sophos_virus_dir = []
+clean_files = []
+changes = []
+
 class malware_scanner:
-    clamscan_virus_dir = []
-    sophos_virus_dir = []
-    clean_files = []
-    changes = []
+    
     def malware_location():    
         #create seperate path for files to be seperated
         if os.path.exists("//home//cgreen//Decryption//Json//virus"):
@@ -302,7 +304,7 @@ class ES_LookUp_Writer:
      #       ELSE pass the record to the update lookup function.
     def create_lookup(self):
         self.create_connection()
-        result = ES_Lead(lead_UUID=kafka_consumer1.key_uuid , Sophos_detected_malware=malware_scanner.sophos_virus_dir , ClamAV_detected_malware = malware_scanner.clamscan_virus_dir , Clean_files = malware_scanner.clean_files , Location_malware_files="Quarantined", location_clean_files="Shared-Drive1", lead_creation_user_UUID=kafka_consumer1.worker_uuid).save()
+        result = ES_Lead(lead_UUID=kafka_consumer1.key_uuid , Sophos_detected_malware=sophos_virus_dir , ClamAV_detected_malware = clamscan_virus_dir , Clean_files = clean_files , Location_malware_files="Quarantined", location_clean_files="Shared-Drive1", lead_creation_user_UUID=kafka_consumer1.worker_uuid).save()
        
 ES_LookUp_Writer()
 
