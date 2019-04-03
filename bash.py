@@ -49,7 +49,7 @@ class malware_process:
                 clamscan_virus_dir.append(file)
                 ##return clamscan_virus_dir
         #Running second bash command for the Sophos malware scanner 
-        bashCommand2 = "sweep "+ dest2 +" "+ --quarantine= + ""+ dest4 +"" 
+        bashCommand2 ="sweep "+ dest2 +" ""--quarantine="+ dest4 +"" 
         process = subprocess.Popen(bashCommand2.split(), stdout=subprocess.PIPE)
         output, error = process.communicate()
         for root, dirs, files in os.walk(dest4):
