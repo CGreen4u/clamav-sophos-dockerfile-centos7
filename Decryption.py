@@ -23,9 +23,8 @@ class Decryption:
     def Decrypt(self, filename, public_key, filepath, passphrase):
         dest1, dest2, dest3, dest4 = cf.destination()
         #the location of the files and the keys pulled from postgres are here as well.  
-        #gpg = gnupg.GPG(gnupghome=(str(filepath)))
-        gpg = gnupg.GPG(homedir=(str(filepath)
-                                        keyring= (str(public_keyring))))
+        gpg = gnupg.GPG(gnupghome=(str(filepath)))
+        #gpg = gnupg.GPG(homedir=(str(filepath), keyring= (str(public_keyring))))
                                         #secring= (str(secret_keyring)))
 
     
