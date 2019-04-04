@@ -36,6 +36,7 @@ class malware_process:
 
     def malware_bash(self):
         dest1, dest2, dest3, dest4 = cf.destination()
+        dest5, dest6 = cf.destination2()
         files_b4_cleaning = [(dest2)]
         clamscan_virus_dir = []
         sophos_virus_dir = []
@@ -49,8 +50,9 @@ class malware_process:
               for file in files:
                 clamscan_virus_dir.append(file)
                 ##return clamscan_virus_dir
-        #Running second bash command for the Sophos malware scanner 
-        bashCommand2 ="sweep "+ dest2 +" ""--quarantine="+ dest4 +"" 
+        #Running second bash command for the Sophos malware scanner
+        #bashCommand2 ="sweep "+ dest2 +" ""--quarantine="+ dest4 +"" 
+        bashCommand2 ="sweep"" " + dest5 + "-move="+ dest6 + "" 
         process = subprocess.Popen(bashCommand2.split(), stdout=subprocess.PIPE)
         output, error = process.communicate()
         for root, dirs, files in os.walk(dest4):
