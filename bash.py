@@ -32,7 +32,7 @@ class malware_process:
           
          
         files_b4_cleaning = [(dest2)]
-        #return files_b4_cleaning
+        return files_b4_cleaning
 
     def malware_bash(self):
         dest1, dest2, dest3, dest4 = cf.destination()
