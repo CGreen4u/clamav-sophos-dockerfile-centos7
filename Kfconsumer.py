@@ -6,25 +6,25 @@ from KfElasticsearch import ES_Lead, ES_LookUp_Writer, Error_ES_LookUp_Writer
 
 class kafka_consumer1:
     def __init__(self):
-        self.key = None
-        self.worker = None
-        self.filen = None
-        self.filep = None
+        self.key_uuid = None
+        self.worker_uuid = None
+        self.filename = None
+        self.filepath = None
         self.missing_element = None
     #clear the key from list after running
     #all information comes in as bytes and must be converted
     def getUUIDS(self):
-        uuids = [self.key]
+        uuids = [self.key_uuid]
         return uuids
-    def setUUIDS(self, key):
-        self.key = key
+    def setUUIDS(self, key_uuid):
+        self.key_uuid = key_uuid
     def getFILE(self):
-        file = [self.filen, self.filep, self.worker, self.missing_element]
+        file = [self.filename, self.filepath, self.worker_uuid, self.missing_element]
         return file
-    def setFILE(self, filen, filep, worker, missing_element):
-        self.filen = filen
-        self.filep = filep
-        self.worker = worker
+    def setFILE(self, filename, filepath, worker_uuid, missing_element):
+        self.filename = filename
+        self.filepath = filepath
+        self.worker_uuid = worker_uuid
         self.missing_element = missing_element
     def bytesToDictionary(self, b_array):
          try:

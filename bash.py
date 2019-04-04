@@ -4,17 +4,17 @@ import configuration as cf
 
 class malware_process:
     def __init__(self):
-        self.clamscan = None
-        self.sophos = None
+        self.clamscan_virus_dir = None
+        self.sophos_virus_dir = None
         self.clean_files = None
         self.changes = None
         self.files_b4_cleaning = None
     def getBash(self):
-        binfo = [self.clamscan, self.sophos, self.clean_files, self.changes, self.files_b4_cleaning]
+        binfo = [self.clamscan_virus_dir, self.sophos_virus_dir, self.clean_files, self.changes, self.files_b4_cleaning]
         return binfo
-    def setBash(self, clamscan, sophos, clean_files, changes, files_b4_cleaning):
-        self.clamscan = clamscan
-        self.sophos = sophos
+    def setBash(self, clamscan_virus_dir, sophos_virus_dir, clean_files, changes, files_b4_cleaning):
+        self.clamscan_virus_dir = clamscan_virus_dir
+        self.sophos_virus_dir = sophos_virus_dir
         self.clean_files = clean_files
         self.changes = changes
         self.files_b4_cleaning = files_b4_cleaning
@@ -31,11 +31,12 @@ class malware_process:
             os.mkdir(dest3)  
           
          
-        files_b4_cleaning = [(dest2)]
-        return files_b4_cleaning
+        #files_b4_cleaning = [(dest2)]
+        #return files_b4_cleaning
 
     def malware_bash(self):
         dest1, dest2, dest3, dest4 = cf.destination()
+        files_b4_cleaning = [(dest2)]
         clamscan_virus_dir = []
         sophos_virus_dir = []
         clean_files = []
@@ -58,5 +59,5 @@ class malware_process:
         ##        return changes
         sophos_virus_dir.append(list(set(changes) - set(clamscan_virus_dir)))
         clean_files = os.listdir(dest2)
-        self.setBash(self.clamscan, self.sophos, self.clean_files, self.changes, self.files_b4_cleaning)
+        self.setBash(self.clamscan_virus_dir, self.sophos_virus_dir, self.clean_files, self.changes, self.files_b4_cleaning)
         return malware_process.getBash(self)

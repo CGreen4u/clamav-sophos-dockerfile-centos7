@@ -23,7 +23,6 @@ worker_uuid = fileinfo[2]
 #kc.bytesToDictionary()
 
 #start Postgres
-postgres.postgres_UUID()
 pg = postgres.postgres_UUID(filename, filepath, key_uuid) 
 conn = pg.post_connect()
 pg.querying_data(key_uuid, conn)
