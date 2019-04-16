@@ -1,6 +1,5 @@
 psycopg2
 fs
-gnupg
 #import configuration-user
 subprocess.run
 #pytest-shutil
@@ -8,3 +7,4 @@ datetime
 elasticsearch
 elasticsearch_dsl 
 kafka
+python-gnupg==0.4.3
